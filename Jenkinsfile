@@ -23,6 +23,11 @@ pipeline {
                 sh 'php artisan key:generate'
             }
         }
+        stage('Create database.sqlite'){
+            steps{
+                 sh 'touch database/database.sqlite'
+            }
+        }
         stage('npm'){
             steps{
                 sh 'npm install'
